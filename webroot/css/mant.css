@@ -1,0 +1,64 @@
+html {
+	font-size: 100%; 
+}
+
+body {
+	font-family: Raleway;
+	font-weight: bold;
+	padding-bottom: 40px;
+	background-color: #CCDBDC;
+
+}
+
+#form-signin {
+	max-width: 450px;
+	background-color: transparent;
+	margin: 0 auto;
+}
+
+nav{
+	border-bottom: 1px solid black;
+
+}
+
+.navbar,
+.nav a{
+	background-color: #003249;
+	color: white;
+}
+.navbar .container-fluid{
+	width: 80%;
+}
+
+.navbar-brand,
+.navbar-nav li a {
+	line-height: 70px;
+	height: 70px;
+	padding-top: 0;
+	color: white;
+}
+
+.navbar-toggle {
+	margin-top: 15px;
+	padding: 5px 10px;
+}
+
+#nav.navbar-nav.navbar-right li a {
+	color: white;
+}
+
+.container{
+	padding-top: 20px;
+	margin-top: -20px;
+	width: 100%
+	max-width: 1200px;
+	background-color: #9AD1D4;
+}
+
+h2{
+	color: red;
+}
+
+.glyphicon.glyphicon-menu-hamburger{
+	font-size: 25px;
+}

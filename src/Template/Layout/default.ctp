@@ -29,19 +29,28 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('cake.css') ?>
 
+    <?= $this->Html->css('bootstrap.css') ?>
+
+    <?= $this->Html->css('mant.css') ?>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
+
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
 </head>
 <body>
-    <nav class="top-bar expanded" data-topbar role="navigation">
-        <ul class="title-area large-3 medium-4 columns">
-            <li class="name">
-                <h1><a href=""><?= $this->fetch('title') ?></a></h1>
-            </li>
-        </ul>
-        <div class="top-bar-section">
-            <ul class="right">
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container-fluid">
+
+            <div class="navbar-header navbar-center">
+              <a class="navbar-brand" href="#">MANT</a>
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <i class="glyphicon glyphicon-menu-hamburger"></i>
+            </button>
+        </div>
+
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
                 <?php if($loggedIn) : ?>
                     <li><?= $this->Html->link('Register', ['controller' => 'users', 'action' => 'register']);?></li>
                 <?php else : ?>
@@ -49,12 +58,20 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                 <?php endif ; ?>
             </ul>
         </div>
-    </nav>
-    <?= $this->Flash->render() ?>
-    <div class="container clearfix">
-        <?= $this->fetch('content') ?>
     </div>
-    <footer>
-    </footer>
+</nav>
+
+
+
+
+<?= $this->Flash->render() ?>
+<div class="container clearfix">
+    <?= $this->fetch('content') ?>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<?php echo $this->Html->script('bootstrap.min.js'); ?>
+<footer>
+</footer>
 </body>
 </html>

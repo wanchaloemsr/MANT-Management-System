@@ -22,7 +22,7 @@ class UsersController extends AppController
         $users = $this->paginate($this->Users);
 
         $this->set(compact('users'));
-        $this->set('_serialize', ['users']);
+
     }
 
     /**
@@ -49,6 +49,7 @@ class UsersController extends AppController
      */
     public function add()
     {
+
         $user = $this->Users->newEntity();
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
@@ -114,7 +115,7 @@ class UsersController extends AppController
             $user = $this->Auth->identify();
             if($user){
                 $this->Auth->setUser($user);
-                return $this->redirect(['controller' => 'users']);
+                return $this->redirect(['action' => 'dashboard']);
             }
             //incorrect login
             $this->Flash->error('Incorrect Login');
@@ -128,6 +129,7 @@ class UsersController extends AppController
     }
 
     public function register(){
+
         $user = $this->Users->newEntity();
         if($this->request->is('post')){
             $user = $this->Users->patchEntity($user, $this->request->data);
@@ -145,5 +147,10 @@ class UsersController extends AppController
 
     public function beforeFilter(Event $event){
         $this->Auth->allow(['register']);
+    }
+
+    public function dashboard()
+    {
+
     }
 }
