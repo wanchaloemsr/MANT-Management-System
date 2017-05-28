@@ -23,9 +23,16 @@ nav{
 
 .navbar,
 .nav a{
-	background-color: #003249;
+	background-color: #003249;1
 	color: white;
+	padding: -10px;
 }
+
+.navbar-default .navbar-nav>li>a:hover {
+  background-color: #B0B0B0;
+  color: red;
+}
+
 .navbar .container-fluid{
 	width: 80%;
 }
